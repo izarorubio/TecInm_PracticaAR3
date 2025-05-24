@@ -6,6 +6,7 @@ using UnityEngine.XR.ARSubsystems;
 public class CustomImageManager : MonoBehaviour
 {
     private ARTrackedImageManager trackedImageManager;
+
    
 
     void Awake()
@@ -37,7 +38,7 @@ public class CustomImageManager : MonoBehaviour
     }
 
 
-    
+    public ArrowPathManager arrowPathManager;
 
     void OnTrackedImagesChanged(ARTrackedImagesChangedEventArgs eventArgs)
     {
@@ -46,6 +47,17 @@ public class CustomImageManager : MonoBehaviour
         foreach (ARTrackedImage trackedImage in eventArgs.added)
         {
             Debug.Log($"IMAGEN AÑADIDA (Evento): Nombre='{trackedImage.referenceImage.name}', Estado={trackedImage.trackingState}, Posición={trackedImage.transform.position}");
+            Debug.Log($"Imagen detectada: {trackedImage.referenceImage.name}");
+
+            if (arrowPathManager != null)
+            {
+                Debug.Log("Inicializando camino de flechas...");
+                arrowPathManager.InitializePath(trackedImage.transform);
+            }
+            else
+            {
+                Debug.LogError("arrowPathManager es null.");
+            }
         }
 
         foreach (ARTrackedImage trackedImage in eventArgs.updated)
