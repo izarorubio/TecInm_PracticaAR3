@@ -7,17 +7,14 @@ public class CustomImageManager : MonoBehaviour
 {
     private ARTrackedImageManager trackedImageManager;
 
-   
-
     void Awake()
     {
-
         trackedImageManager = FindObjectOfType<ARTrackedImageManager>();
 
         if (trackedImageManager == null)
         {
             Debug.LogError("LogTrackedImages: ARTrackedImageManager no encontrado en la escena.");
-            enabled = false; // Deshabilita este script si no se encuentra el manager.
+            enabled = false; // Deshabilita este script si no se encuentra el manager
         }
     }
 
@@ -32,6 +29,7 @@ public class CustomImageManager : MonoBehaviour
     void OnDisable()
     {
         if (trackedImageManager != null)
+            if (trackedImageManager != null)
         {
             trackedImageManager.trackedImagesChanged -= OnTrackedImagesChanged;
         }
@@ -49,6 +47,7 @@ public class CustomImageManager : MonoBehaviour
             Debug.Log($"IMAGEN AÑADIDA (Evento): Nombre='{trackedImage.referenceImage.name}', Estado={trackedImage.trackingState}, Posición={trackedImage.transform.position}");
             Debug.Log($"Imagen detectada: {trackedImage.referenceImage.name}");
 
+            // Si existe el ArrowManager, inicializa las flechas (en referencia a la imagen detectada)
             if (arrowPathManager != null)
             {
                 Debug.Log("Inicializando camino de flechas...");

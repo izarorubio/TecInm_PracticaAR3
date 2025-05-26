@@ -149,6 +149,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pathManager: {fileID: 3919344431037767297, guid: ae96e2e50cd4067419d913fbb8ef4f92, type: 3}
   arrowIndex: 0
+  triggerSound: {fileID: 8300000, guid: 7f7a0bf04d7fcbd418585c207724b6d6, type: 3}
 --- !u!1 &3378997278254036522
 GameObject:
   m_ObjectHideFlags: 0
@@ -177,8 +178,8 @@ Transform:
   m_GameObject: {fileID: 3378997278254036522}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.38268343, z: -0, w: 0.92387956}
-  m_LocalPosition: {x: 0, y: 0, z: 0.49299997}
-  m_LocalScale: {x: 0.5937008, y: 1, z: 0.59370077}
+  m_LocalPosition: {x: 0, y: -0, z: 0.51}
+  m_LocalScale: {x: 0.72201115, y: 1, z: 0.70295924}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 343681667891307556}
